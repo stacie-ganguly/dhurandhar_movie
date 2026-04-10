@@ -1,0 +1,263 @@
+/* notes: 
+- check out font in use website for fonts 
+- unsplash for images
+- add depth
+- opacity for texts 
+- github templates (it will have code)
+- colors: http://colormind.io/bootstrap/
+
+*/
+
+
+body {
+    background-color: #1B1212;
+}
+
+/*nav bar styling*/
+nav {
+    display:flex;
+    background-color: #1B1212;
+    padding: 10px;
+    align-items: center;
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+}
+
+/*fixed for responsive*/
+ul.navBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+li.navBar {
+    margin: 10px;
+    flex: 1;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/*header and title area*/
+header {
+    background-color: #1B1212;
+    color: #b22f2f;
+    text-align: center;
+
+    background-image: url(dhurandhar.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
+
+.titleh1 {
+    font-size: clamp(40px, 8vw, 100px);
+    letter-spacing: clamp(5px, 2vw, 20px);
+    font-family: "Copperplate", Fantasy ;
+    color: white ;
+}
+
+.titleh2 {
+    font-size: clamp(20px, 4vw, 50px);
+    letter-spacing: clamp(3px, 1.5vw, 15px);
+    font-family: "Georgia", Serif;
+    color: white;
+}
+
+h1,h2 {
+    line-height: 0.5;
+}
+
+/*about section*/
+#movie-poster {
+    padding-left:60px;
+    padding-bottom:50px;
+  
+}
+
+h3.about {
+    color: #000000;
+}
+
+
+section.about {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+.text-container {
+    max-width: 500px;
+    margin: 0 auto;        /* centers horizontally */
+    text-align: center;
+}
+
+p.about{
+    color:white;
+}
+
+
+
+/* trailer section*/ 
+section {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+.trailer {
+    color: white ;
+    text-align : center;
+    font-size: 35px;
+    margin-bottom: 5;
+}
+
+.video {
+    width: 90%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* cast section */
+
+
+h3.cast{
+    color: white ;
+    text-align : center;
+    font-size: 35px;
+    margin-bottom: 5;
+    padding-top: 50px;
+}
+
+p.description {
+    color: white;
+}
+
+/* cast layout */
+.cast-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* card */
+.card {
+    position: relative; /*allows overlay to be positioned inside the card*/
+    width: 280px; 
+    height: 350px;
+    border-radius: 15px; /*  makes corners rounded */
+    box-shadow: 0 0 15px rgba(178, 47, 47, 0.3); /* adds the red glow */
+    transition: transform 0.3s ease; /* smooth animation */
+}
+
+.card:hover {
+    transform: scale(1.05); /* enlarges card on hover*/
+    box-shadow: 0 0 25px rgba(178, 47, 47, 0.8); /* makes the glow on hover*/
+}
+
+/* image */
+.card-img {
+    width: 100%; /* makes image fill full card width*/
+    height: 100%; /* fill full card height */
+    object-fit: cover; /* crops image nicely without distortion */
+    transition: 0.4s ease; /*smooth transition for hover effect */
+}
+
+/* blur + zoom */
+.card:hover .card-img { 
+    filter: blur(3px); /* blurs image when hovering card */
+    transform: scale(1.1); /*  slightly zooma in image on hover*/
+}
+
+.overlay {
+    position: absolute; /* places overlay on top of image */
+    top: 0; /*  aligns overlay to top of card*/
+    left: 0;
+    width: 100%; /* makes overlay cover full card width */
+    height: 100%;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.4)
+    ); /* creates dark gradient for text radability */
+
+    color: white; /* text color white */
+
+    display: flex; /*  enables flexbox for centering content*/
+    align-items: center;     /* center vertically */
+    justify-content: center; /* center horizontally */
+    text-align: center; /*  centers text inside overlay*/
+
+    padding: 25px; /* adds space around text*/
+
+    opacity: 0; /* hides overlay by defauly */
+    transform: translateY(20px); /* moves overlay slightly down initially */
+    transition: 0.4s ease; /* smooth fade/ move animation */
+}
+
+.overlay p {
+    font-size: 14px; /* sets para text size */
+    line-height: 1.4; /* improves redability by spacing lines */
+}
+
+.card:hover .overlay {
+    opacity: 1; /*  makes overlay visible on hover*/
+    transform: translateY(0); /* moves overlay into place on hover */
+}
+
+
+
+@media (max-width: 768px) {
+
+    
+
+    /* Cast cards stack nicely */
+    .cast-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Reduce padding everywhere */
+    section {
+        padding: 10px;
+    }
+
+    /* footer ticket link styling */
+footer.ticket {
+    display: flex; /* centers the link using flexbox*/
+    justify-content: center; /* horizontally centers the link*/
+    padding: 40px 20px; /* adds space above and below footer */
+    background-color: #1B1212; /* dark theme */
+}
+
+footer.ticket a {
+    color: #ffffff; /* makes text white*/
+    text-decoration: none; /* removes underline from link*/
+    font-size: 18px; /* makes link bigger */
+    letter-spacing: 2px;
+    padding: 12px 25px; /* turns link into a button shape*/
+    border: 1px solid rgba(178, 47, 47, 0.6); /* adds red border*/
+    border-radius: 10px; /* rounds corners*/
+    background: rgba(178, 47, 47, 0.1); /* faint red background*/
+    box-shadow: 0 0 10px rgba(178, 47, 47, 0.3); /* soft glow */
+    transition: all 0.3s ease; /* animations for hover effects*/
+}
+
+footer.ticket a:hover {
+    transform: scale(1.08); /* enlarges hover button*/
+    background: rgba(178, 47, 47, 0.3); /* makes red background stronger on hover*/
+    box-shadow: 0 0 25px rgba(178, 47, 47, 0.8); /* intensifies glow*/
+    border-color: rgba(178, 47, 47, 1);
+}
+}
