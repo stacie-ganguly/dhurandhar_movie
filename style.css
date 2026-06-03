@@ -5,17 +5,35 @@
 - opacity for texts 
 - github templates (it will have code)
 - colors: http://colormind.io/bootstrap/
-
 */
 
+/*back to top button*/
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 10px 15px;
+
+  display: none;
+  cursor: pointer;
+}
+
+/* =====================
+   BASE
+   ===================== */
 
 body {
     background-color: #1B1212;
 }
 
-/*nav bar styling*/
+
+/* =====================
+   NAV BAR
+   ===================== */
+
 nav {
-    display:flex;
+    display: flex;
     background-color: #1B1212;
     padding: 10px;
     align-items: center;
@@ -23,7 +41,7 @@ nav {
     flex-wrap: wrap;
 }
 
-/*fixed for responsive*/
+/* centers the nav links and spaces them evenly */
 ul.navBar {
     display: flex;
     justify-content: space-between;
@@ -40,25 +58,28 @@ li.navBar {
     color: #FFFFFF;
 }
 
-/*header and title area*/
+
+/* =====================
+   HEADER + TITLE
+   ===================== */
+
 header {
     background-color: #1B1212;
     color: #b22f2f;
     text-align: center;
-
     background-image: url(dhurandhar.gif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     min-height: 100vh;
 }
 
+/* clamp() scales font size fluidly between a min and max based on screen width */
 .titleh1 {
     font-size: clamp(40px, 8vw, 100px);
     letter-spacing: clamp(5px, 2vw, 20px);
-    font-family: "Copperplate", Fantasy ;
-    color: white ;
+    font-family: "Copperplate", Fantasy;
+    color: white;
 }
 
 .titleh2 {
@@ -68,21 +89,23 @@ header {
     color: white;
 }
 
-h1,h2 {
+h1, h2 {
     line-height: 0.5;
 }
 
-/*about section*/
+
+/* =====================
+   ABOUT SECTION
+   ===================== */
+
 #movie-poster {
-    padding-left:60px;
-    padding-bottom:50px;
-  
+    padding-left: 60px;
+    padding-bottom: 50px;
 }
 
 h3.about {
     color: #000000;
 }
-
 
 section.about {
     display: flex;
@@ -91,49 +114,59 @@ section.about {
     padding: 30px 20px;
 }
 
+/* caps the text width and centers it */
 .text-container {
     max-width: 500px;
-    margin: 0 auto;        /* centers horizontally */
+    margin: 0 auto;
     text-align: center;
 }
 
-p.about{
-    color:white;
+p.about {
+    color: white;
 }
 
 
+/* =====================
+   GENERAL SECTION DEFAULTS
+   ===================== */
 
-/* trailer section*/ 
+/* every <section> centers its children vertically stacked */
 section {
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+
+/* =====================
+   TRAILER SECTION
+   ===================== */
+
 .trailer {
-    color: white ;
-    text-align : center;
+    color: white;
+    text-align: center;
     font-size: 35px;
-    margin-bottom: 5;
+    margin-bottom: 5px;
 }
 
+/* aspect-ratio keeps the video 16:9 regardless of screen size */
 .video {
     width: 90%;
     max-width: 700px;
     aspect-ratio: 16 / 9;
     height: auto;
-    align-items: center;
-    justify-content: center;
 }
 
 
-/* cast section */
+/* =====================
+   CAST SECTION
+   ===================== */
 
-
-h3.cast{
-    color: white ;
-    text-align : center;
+h3.cast {
+    color: white;
+    text-align: center;
     font-size: 35px;
-    margin-bottom: 5;
+    margin-bottom: 5px;
     padding-top: 50px;
 }
 
@@ -141,123 +174,353 @@ p.description {
     color: white;
 }
 
-/* cast layout */
+/* horizontal scroll container */
 .cast-container {
-    display: flex;
-    justify-content: center;
+    display: flex;                      /* lines all cards up in a row */
     gap: 30px;
-    padding: 20px;
-    flex-wrap: wrap;
+    padding: 20px 40px;
+    overflow-x: auto;                   /* enables horizontal scrolling when cards overflow */
+    scroll-snap-type: x mandatory;      /* snaps to each card when scrolling stops */
+    -webkit-overflow-scrolling: touch;  /* smooth momentum scrolling on iOS */
+    scrollbar-width: none;              /* hides scrollbar on Firefox */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* card */
+/* hides scrollbar on Chrome and Safari */
+.cast-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* individual cast card */
 .card {
-    position: relative; /*allows overlay to be positioned inside the card*/
-    width: 280px; 
+    position: relative;         /* lets the overlay sit on top using absolute positioning */
+    width: 280px;
     height: 350px;
-    border-radius: 15px; /*  makes corners rounded */
-    box-shadow: 0 0 15px rgba(178, 47, 47, 0.3); /* adds the red glow */
-    transition: transform 0.3s ease; /* smooth animation */
+    flex-shrink: 0;             /* stops cards from squishing — keeps them at full 280px width */
+    scroll-snap-align: start;   /* snaps the left edge of each card when scroll stops */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(178, 47, 47, 0.3);
+    transition: transform 0.3s ease;
+    cursor: grab;
 }
 
 .card:hover {
-    transform: scale(1.05); /* enlarges card on hover*/
-    box-shadow: 0 0 25px rgba(178, 47, 47, 0.8); /* makes the glow on hover*/
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(178, 47, 47, 0.8);
 }
 
-/* image */
+/* card image fills the full card */
 .card-img {
-    width: 100%; /* makes image fill full card width*/
-    height: 100%; /* fill full card height */
-    object-fit: cover; /* crops image nicely without distortion */
-    transition: 0.4s ease; /*smooth transition for hover effect */
-}
-
-/* blur + zoom */
-.card:hover .card-img { 
-    filter: blur(3px); /* blurs image when hovering card */
-    transform: scale(1.1); /*  slightly zooma in image on hover*/
-}
-
-.overlay {
-    position: absolute; /* places overlay on top of image */
-    top: 0; /*  aligns overlay to top of card*/
-    left: 0;
-    width: 100%; /* makes overlay cover full card width */
+    width: 100%;
     height: 100%;
+    object-fit: cover;          /* crops the image to fill without distortion */
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
 
+/* blurs and zooms the image when hovering the card */
+.card:hover .card-img {
+    filter: blur(3px);
+    transform: scale(1.1);
+}
+
+/* dark overlay that appears on hover with the bio text */
+.overlay {
+    position: absolute;         /* sits on top of the image inside the card */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.9),
         rgba(0, 0, 0, 0.4)
-    ); /* creates dark gradient for text radability */
-
-    color: white; /* text color white */
-
-    display: flex; /*  enables flexbox for centering content*/
-    align-items: center;     /* center vertically */
-    justify-content: center; /* center horizontally */
-    text-align: center; /*  centers text inside overlay*/
-
-    padding: 25px; /* adds space around text*/
-
-    opacity: 0; /* hides overlay by defauly */
-    transform: translateY(20px); /* moves overlay slightly down initially */
-    transition: 0.4s ease; /* smooth fade/ move animation */
+    );                          /* dark gradient so white text is readable */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    opacity: 0;                 /* hidden by default */
+    transform: translateY(20px); /* slightly shifted down to start */
+    transition: 0.4s ease;
 }
 
 .overlay p {
-    font-size: 14px; /* sets para text size */
-    line-height: 1.4; /* improves redability by spacing lines */
+    font-size: 14px;
+    line-height: 1.4;
 }
 
+/* fades overlay in and slides it up on hover */
 .card:hover .overlay {
-    opacity: 1; /*  makes overlay visible on hover*/
-    transform: translateY(0); /* moves overlay into place on hover */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
+/* =====================
+   REVIEW SECTION
+   ===================== */
+/* =====================
+   REVIEW SECTION
+   ===================== */
+
+.review-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.review-title {
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+
+.review-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* form — no background, no border, no box around the whole thing */
+.review-form {
+    flex-shrink: 0;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* plain white label, same font as everything else */
+.form-group label {
+    color: white;
+    font-size: 14px;
+}
+
+/* inputs still have a box, just simple */
+.review-form input[type="text"],
+.review-form textarea {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    padding: 10px 12px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.review-form input[type="text"]:focus,
+.review-form textarea:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* stars */
+.star-rating {
+    display: flex;
+    gap: 6px;
+}
+
+.star {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.star.selected,
+.star.hovered {
+    color: #c0392b;
+}
+
+/* plain simple button */
+.submit-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 15px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.submit-btn:hover {
+    border-color: white;
+}
+
+/* reviews list */
+.reviews-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.no-reviews-msg {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+}
+
+/* review cards — simple box same style as inputs */
+.review-card {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 16px;
+    color: white;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.review-card .reviewer-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.review-card .reviewer-stars {
+    color: #c0392b;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.review-card .reviewer-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .review-layout {
+        flex-direction: column;
+    }
+    .review-form {
+        width: 100%;
+    }
+}
+/* =====================
+   FOOTER
+   ===================== */
+
+footer.ticket {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #1B1212;
+}
+
+footer.ticket a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 12px 25px;
+    border: 1px solid rgba(178, 47, 47, 0.6);
+    border-radius: 10px;
+    background: rgba(178, 47, 47, 0.1);
+    box-shadow: 0 0 10px rgba(178, 47, 47, 0.3);
+    transition: all 0.3s ease;
+}
+
+footer.ticket a:hover {
+    transform: scale(1.08);
+    background: rgba(178, 47, 47, 0.3);
+    box-shadow: 0 0 25px rgba(178, 47, 47, 0.8);
+    border-color: rgba(178, 47, 47, 1);
+}
+
+
+/* =====================
+   FAQ SECTION
+   ===================== */
+
+.faq-item {
+    margin: 1rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    transform: translateX(5px);
+}
+
+/* answer starts hidden with max-height 0, JS toggles it open */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1.5rem;
+    color: white;
+}
+
+.faq-answer p {
+    padding: 1rem 0;
+    margin: 0;
+}
+
+
+/* =====================
+   RESPONSIVE (MOBILE)
+   ===================== */
 
 @media (max-width: 768px) {
 
-    
-
-    /* Cast cards stack nicely */
+    /* keep cast cards horizontal on mobile, just shrink them */
     .cast-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        padding: 20px 15px;
+        gap: 20px;
     }
 
-    /* Reduce padding everywhere */
+    .card {
+        width: 220px;
+        height: 290px;
+    }
+
+    /* stack form on top, reviews below on small screens */
+    .review-layout {
+        flex-direction: column;
+    }
+
+    /* form goes full width when stacked */
+    .review-form {
+        width: 100%;
+    }
+
     section {
         padding: 10px;
     }
 
-    /* footer ticket link styling */
-footer.ticket {
-    display: flex; /* centers the link using flexbox*/
-    justify-content: center; /* horizontally centers the link*/
-    padding: 40px 20px; /* adds space above and below footer */
-    background-color: #1B1212; /* dark theme */
-}
-
-footer.ticket a {
-    color: #ffffff; /* makes text white*/
-    text-decoration: none; /* removes underline from link*/
-    font-size: 18px; /* makes link bigger */
-    letter-spacing: 2px;
-    padding: 12px 25px; /* turns link into a button shape*/
-    border: 1px solid rgba(178, 47, 47, 0.6); /* adds red border*/
-    border-radius: 10px; /* rounds corners*/
-    background: rgba(178, 47, 47, 0.1); /* faint red background*/
-    box-shadow: 0 0 10px rgba(178, 47, 47, 0.3); /* soft glow */
-    transition: all 0.3s ease; /* animations for hover effects*/
-}
-
-footer.ticket a:hover {
-    transform: scale(1.08); /* enlarges hover button*/
-    background: rgba(178, 47, 47, 0.3); /* makes red background stronger on hover*/
-    box-shadow: 0 0 25px rgba(178, 47, 47, 0.8); /* intensifies glow*/
-    border-color: rgba(178, 47, 47, 1);
-}
 }

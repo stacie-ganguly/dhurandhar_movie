@@ -1,469 +1,198 @@
 <!DOCTYPE html> 
-<html>
+<html lang = "en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset = "UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Dhurandhar 2 <!--red color against black/grayish font-->
+            Dhurandhar 2
         </title>
-        <link rel = "stylesheet" href= "style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
         <header>
             <nav>
-                <!--if you want you can put a logo or picture idk-->
                 <ul class="navBar">
                     <li class="navBar">Home</li>
                     <li class="navBar">Buy Tickets</li>
                     <li class="navBar">Reviews</li>
                 </ul>
             </nav>
-            <h1 class="titleh1"> DHURANDHAR 2</h1>
+            <h1 class="titleh1">DHURANDHAR 2</h1>
             <h2 class="titleh2">THE REVENGE</h2>
-            <section class = "about">
-                <div class = "text-container">
-                    <!-- movie summary --> 
-
-                    <p class="about"> Hamza Ali Mazari pursues Major Iqbal to dismantle Pakistan's crime system. As his mission unfolds, his past reveals a transformative history that shaped his relentless drive for justice.</p>
-                    
+            <section class="about">
+                <div class="text-container">
+                    <p class="about">Hamza Ali Mazari pursues Major Iqbal to dismantle Pakistan's crime system. As his mission unfolds, his past reveals a transformative history that shaped his relentless drive for justice.</p>
                 </div>
-           
             </section>
         </header>
-        <!--about-->
-        
-        
-        <section> <!-- movie trailer --> 
-            <h3 class = "trailer"> TRAILER </h3>
-            <iframe class = "video"  src="https://www.youtube.com/embed/Pb2KJlBGids?si=mXM-xAq7A034cIhF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </section>
-        
-        <section> <!-- cast--> 
-            <h3 class="cast"> CAST </h3> 
-        
-            <div class="cast-container">
+
+        <main>
+            <!-- TRAILER SECTION -->
+            <section>
+                <h3 class="trailer">TRAILER</h3>
+                <iframe class="video" src="https://www.youtube.com/embed/Pb2KJlBGids?si=mXM-xAq7A034cIhF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
     
-            <!-- Aditya -->
-                <div class="card">
-                    <img class="card-img" src="Aditya Dhar.jpg" alt="Aditya Dhar">
-                    <div class="overlay">
-                        <p>Aditya Dhar is one of India's most high-profile directors today, known for his high-octane, grounded action films. After winning the National Award for his debut, Uri: The Surgical Strike, he has dominated the box office with his massive Dhurandhar franchise.</p>
-                    </div>
-                </div>
-        
-                <!-- Ranveer -->
-                <div class="card">
-                    <img class="card-img" src="Ranveer Singh.jpg" alt="Ranveer Singh">
-                    <div class="overlay">
-                        <p>Ranveer Singh is a premier Bollywood actor known for his incredible range and high-energy performances. In the world of Aditya Dhar's Dhurandhar franchise (2025–2026), he serves as the central anchor of the story.</p>
-                    </div>
-                </div>
-        
-                <!-- Sara -->
-                <div class="card">
-                    <img class="card-img" src="https://codehs.com/uploads/b0523c83d962f710e96894729c8c4112" alt="Sara Arjun">
-                    <div class="overlay">
-                        <p>Sara Arjun (born June 18, 2005) is an Indian actress known for her work as a acclaimed child artist and rising lead talent in Hindi, Tamil, and Malayalam cinema.</p>
-                    </div>
-                </div>
     
-            </div>
-        </section>
-        
-        
+            <!-- CAST SECTION -->
+            <section>
+                <h3 class="cast">CAST</h3>
+    
+                <div class="cast-container">
+    
+                    <!-- Aditya -->
+                    <figure class="card"> <!-- figures are js images with descriptions, instead of divs -->
+                        <img class="card-img" src="Aditya Dhar.jpg" alt="Aditya Dhar">
+                        <figcaption class="overlay">
+                            <p>Aditya Dhar is one of India's most high-profile directors today, known for his high-octane, grounded action films. After winning the National Award for his debut, Uri: The Surgical Strike, he has dominated the box office with his massive Dhurandhar franchise.</p>
+                        </figcaption> 
+                    </figure>
+    
+                    <!-- Ranveer -->
+                    <div class="card">
+                        <img class="card-img" src="Ranveer Singh.jpg" alt="Ranveer Singh">
+                        <div class="overlay">
+                            <p>Ranveer Singh is a premier Bollywood actor known for his incredible range and high-energy performances. In the world of Aditya Dhar's Dhurandhar franchise (2025–2026), he serves as the central anchor of the story.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Sara -->
+                    <div class="card">
+                        <img class="card-img" src="https://codehs.com/uploads/b0523c83d962f710e96894729c8c4112" alt="Sara Arjun">
+                        <div class="overlay">
+                            <p>Sara Arjun (born June 18, 2005) is an Indian actress known for her work as an acclaimed child artist and rising lead talent in Hindi, Tamil, and Malayalam cinema.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Arjun Rampal -->
+                    <div class="card">
+                        <img class="card-img" src="https://codehs.com/uploads/47f3c4c0187bdf38f2d9aec41548ba11" alt="Arjun Rampal">
+                        <div class="overlay">
+                            <p>Arjun Rampal is an Indian actor and model who mainly works in Hindi films. He has starred in more than 40 films.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Sanjay Dutt -->
+                    <div class="card">
+                        <img class="card-img" src="https://codehs.com/uploads/5a721671b2621d16eeee6575ce38b55f" alt="Sanjay Dutt">
+                        <div class="overlay">
+                            <p>Sanjay Dutt is a legendary Bollywood actor known for his powerful screen presence across action, drama, and comedy genres spanning four decades.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Sara (2nd) -->
+                    <div class="card">
+                        <img class="card-img" src="https://codehs.com/uploads/b0523c83d962f710e96894729c8c4112" alt="Sara Arjun">
+                        <div class="overlay">
+                            <p>Sara Arjun (born June 18, 2005) is an Indian actress known for her work as an acclaimed child artist and rising lead talent in Hindi, Tamil, and Malayalam cinema.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Arjun Rampal (2nd) -->
+                    <div class="card">
+                        <img class="card-img" src="https://codehs.com/uploads/47f3c4c0187bdf38f2d9aec41548ba11" alt="Arjun Rampal">
+                        <div class="overlay">
+                            <p>Arjun Rampal is an Indian actor and model who mainly works in Hindi films. He has starred in more than 40 films.</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </section>
+    
+    
+            <!-- REVIEW SECTION -->
+            <section class="review-section">
+                <h3 class="review-title">LEAVE A REVIEW</h3>
+    
+                <!-- two-column layout: form on left, submitted reviews on right -->
+                <div class="review-layout">
+    
+                    <!-- FORM (left column) -->
+                    <!-- onsubmit calls our JS function instead of doing the default browser form submission -->
+                    <form class="review-form" onsubmit="submitReview(event)">
+    
+                        <!-- NAME FIELD -->
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <!-- "for" on label + "id" on input links them so clicking the label focuses the input -->
+                            <input type="text" id="name" placeholder="e.g. Raj Sharma" required>
+                            <!-- required = browser won't submit if this is empty -->
+                        </div>
+    
+                        <!-- STAR RATING -->
+                        <div class="form-group">
+                            <label>Rating</label>
+                            <!-- data-value stores each star's number (1–5) so JS can read it -->
+                            <div class="star-rating" id="star-rating">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <!-- hidden input — invisible to user but stores the selected star number for JS -->
+                            <input type="hidden" id="rating" value="0">
+                        </div>
+    
+                        <!-- REVIEW TEXT -->
+                        <div class="form-group">
+                            <label for="review">Your Review</label>
+                            <!-- rows controls the default height of the textarea -->
+                            <textarea id="review" rows="4" placeholder="What did you think of the film?" required></textarea>
+                        </div>
+    
+                        <!-- type="submit" triggers the form's onsubmit when clicked -->
+                        <button type="submit" class="submit-btn">Submit Review</button>
+    
+                    </form>
+    
+                    <!-- REVIEWS LIST (right column) — JS injects cards in here after each submission -->
+                    <div class="reviews-list" id="reviews-list">
+                        <!-- empty placeholder shown before any reviews are submitted -->
+                        <p class="no-reviews-msg" id="no-reviews-msg">No reviews yet. Be the first!</p>
+                    </div>
+    
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
         <footer class="ticket">
             <a href="https://www.fandango.com/dhurandhar-the-revenge-2026-244687/movie-overview">
                 Book Tickets
             </a>
         </footer>
+
+
+        <!-- FAQ SECTION -->
+        <div class="faq-item">
+            <button class="faq-question">
+                What services do you offer?
+            </button>
+            <div class="faq-answer">
+                <p>We offer web design, branding, and consulting services.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How can I contact you?
+            </button>
+            <div class="faq-answer">
+                <p>Contact us through our form or by phone.</p>
+            </div>
+        </div>
+        <details class="faq-item">   <!-- html way of having summary instead of js-->   
+            <summary class="faq-question">What services do you offer?</summary>
+            <div class="faq-answer">
+                <p>We offer web design, branding, and consulting services.</p>
+            </div>
+        </details>
         
+        <button id="topBtn" class="back-to-top">
+          ↑ Back to Top
+        </button>
+
     </body>
+    <script src="script.js"></script>
 </html>
-
-<!-- 
-
-CSS TRANSITION CHEAT SHEET
-
-
-TIMING FUNCTIONS (speed styles)
-========================
-
-ease → slow → fast → slow (default, natural)
-linear → constant speed
-ease-in → slow start → fast end
-ease-out → fast start → slow end
-ease-in-out → slow → fast → slow (balanced)
-steps(n) → jumps instead of smooth motion (frame-by-frame style)
-cubic-bezier(x1,y1,x2,y2) → custom curve for advanced control
-
-========================
-BASIC TRANSITION STRUCTURE
-========================
-*/
-
-/* ===== BASIC BOX STYLE ===== */
-.box {
-  width: 100px;              /* starting width */
-  height: 100px;             /* height of the box */
-  background-color: red;     /* initial color */
-
-  /* ===== TRANSITION (smooth animation setup) ===== */
-  
-  transition-property: width, background-color; /* tells CSS: animate width + background-color changes */
-
-  transition-duration: 2s; /* how long the animation takes */
-
-  transition-timing-function: ease;  /* speed curve (slow → fast → slow) */
-
-  transition-delay: 0s;  /* wait time before animation starts */
-}
--->
-
-
-<!-- all about flex 
-
-/*
-====================================================
-CSS FLEXBOX COMPLETE CHEAT SHEET
-====================================================
-
-WHAT IS FLEXBOX?
-- A layout system in CSS that helps align, distribute,
-  and resize elements inside a container
-- Solves common problems like:
-  → centering elements
-  → responsive layouts
-  → avoiding overflow issues
-
-====================================================
-STEP 1: TURN ON FLEXBOX
-====================================================
-
-You apply flexbox to the PARENT container
-*/
-
-.container {
-  display: flex;
-  /* turns on flexbox layout */
-
-  /*
-  Without flex:
-  - elements stack vertically (block behavior)
-
-  With flex:
-  - elements align in a row by default
-  */
-}
-
-/*
-====================================================
-MAIN AXIS vs CROSS AXIS
-====================================================
-
-MAIN AXIS:
-- default horizontal direction (left → right)
-
-CROSS AXIS:
-- vertical direction (top → bottom)
-
-These change when flex-direction changes
-*/
-
-====================================================
-CENTERING ELEMENTS (MOST COMMON USE)
-====================================================
-*/
-
-.container {
-  display: flex;
-
-  justify-content: center;
-  /* aligns items on MAIN axis */
-
-  align-items: center;
-  /* aligns items on CROSS axis */
-}
-
-/*
-👉 RESULT:
-- perfect horizontal + vertical centering
-- responsive to screen size changes
-*/
-
-====================================================
-JUSTIFY CONTENT (MAIN AXIS ALIGNMENT)
-====================================================
-*/
-
-/*
-justify-content values:
-*/
-
-.container {
-  display: flex;
-
-  justify-content: flex-start;
-  /* items go to start (left) */
-
-  justify-content: flex-end;
-  /* items go to end (right) */
-
-  justify-content: center;
-  /* items center horizontally */
-
-  justify-content: space-between;
-  /* first item left, last item right, space in between */
-
-  justify-content: space-around;
-  /* equal space around each item (edges smaller) */
-
-  justify-content: space-evenly;
-  /* equal spacing everywhere */
-}
-
-/*
-====================================================
-ALIGN ITEMS (CROSS AXIS ALIGNMENT)
-====================================================
-*/
-
-.container {
-  display: flex;
-  height: 300px;
-
-  align-items: flex-start;
-  /* top */
-
-  align-items: flex-end;
-  /* bottom */
-
-  align-items: center;
-  /* vertical center */
-}
-
-/*
-====================================================
-FLEX DIRECTION (VERY IMPORTANT)
-====================================================
-*/
-
-.container {
-  display: flex;
-
-  flex-direction: row;
-  /* default: left → right */
-
-  flex-direction: row-reverse;
-  /* right → left */
-
-  flex-direction: column;
-  /* top → bottom */
-
-  flex-direction: column-reverse;
-  /* bottom → top */
-}
-
-/*
-IMPORTANT:
-- flex-direction changes MAIN + CROSS axis
-- affects how justify-content & align-items behave
-*/
-
-====================================================
-GAP (SPACING BETWEEN ITEMS)
-====================================================
-*/
-
-.container {
-  display: flex;
-
-  gap: 20px;
-  /* space between items (cleaner than margin) */
-}
-
-/*
-You can also split it:
-*/
-
-.container {
-  row-gap: 20px;
-  /* vertical spacing */
-
-  column-gap: 10px;
-  /* horizontal spacing */
-}
-
-====================================================
-FLEX WRAP (RESPONSIVE LAYOUTS)
-====================================================
-*/
-
-.container {
-  display: flex;
-
-  flex-wrap: wrap;
-  /* items move to next line when no space */
-
-  flex-wrap: nowrap;
-  /* default: items shrink instead of wrapping */
-}
-
-/*
-IMPORTANT:
-- wrap = responsive rows
-- nowrap = everything stays in one line
-*/
-
-====================================================
-ALIGN CONTENT (MULTIPLE ROWS)
-====================================================
-*/
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-
-  align-content: center;
-  /* controls spacing between ROWS (not items) */
-
-  align-content: flex-start;
-  align-content: flex-end;
-  align-content: space-between;
-  align-content: space-around;
-  align-content: space-evenly;
-}
-
-/*
-DIFFERENCE:
-- align-items → aligns items inside EACH row
-- align-content → aligns ALL rows together
-*/
-
-====================================================
-FLEX SHRINK (RESPONSIVE SHRINKING)
-====================================================
-*/
-
-.item {
-  flex-shrink: 1;
-  /* default: items shrink when space is small */
-
-  flex-shrink: 0;
-  /* prevents shrinking → may cause overflow */
-}
-
-/*
-TIP:
-- use flex-shrink: 0 for images/icons you don't want distorted
-*/
-
-====================================================
-FLEX GROW (FILL AVAILABLE SPACE)
-====================================================
-*/
-
-.item {
-  flex-grow: 0;
-  /* default: does NOT expand */
-
-  flex-grow: 1;
-  /* fills available space equally */
-}
-
-/*
-EXAMPLE:
-*/
-
-.item1 {
-  flex-grow: 5;
-  /* grows 5x faster than others */
-}
-
-/*
-====================================================
-MIN/MAX SIZES (CONTROL LIMITS)
-====================================================
-*/
-
-.item {
-  min-width: 100px;
-  /* prevents shrinking too small */
-
-  max-width: 300px;
-  /* prevents growing too large */
-}
-
-/*
-IMPORTANT:
-- prevents ugly stretching/shrinking
-*/
-
-====================================================
-ALIGN SELF (INDIVIDUAL ITEM CONTROL)
-====================================================
-*/
-
-.item {
-  align-self: flex-start;
-  /* overrides align-items for THIS item */
-
-  align-self: flex-end;
-  align-self: center;
-}
-
-/*
-USE CASE:
-- move one item differently from others
-*/
-
-====================================================
-COMMON CENTERING TRICK INSIDE BOXES
-====================================================
-*/
-
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* centers content inside the box */
-}
-
-/*
-====================================================
-BONUS: NAVBAR TRICK
-====================================================
-*/
-
-.nav-logo {
-  margin-right: auto;
-  /* pushes everything else to the right */
-}
-
-/*
-====================================================
-FLEXBOX SUMMARY
-====================================================
-
-✔ display: flex → activates flexbox
-✔ justify-content → main axis alignment
-✔ align-items → cross axis alignment
-✔ flex-direction → changes axis direction
-✔ gap → spacing between items
-✔ flex-wrap → responsive line wrapping
-✔ flex-grow → expansion
-✔ flex-shrink → shrinking
-✔ min/max-width → size limits
-✔ align-self → individual override
-
-====================================================
-WHY FLEXBOX?
-====================================================
-
-✔ responsive layouts
-✔ easy centering
-✔ no messy margins
-✔ adapts to screen size
-✔ works for modern websites
-*/
-
--->
